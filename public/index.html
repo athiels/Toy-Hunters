@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Toy Hunters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <script type="module" src="./js/imageMapResizer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.js"></script>
+    <script type="module" src="./main.js"></script>
+
+    <script type="text/x-template" id="trap-template">
+        <div>
+            <img v-if="$store.state.$tookMan2" class="bg" src="./img/trap/trap_overview_leeg.jpg" usemap="#trapleegmap"/>
+            <img v-else class="bg" src="./img/trap/trap_overview.jpg" usemap="#trapmap"/>
+
+            <map v-if="!$store.state.$tookMan2" name="trapmap">
+                <area shape="rect" coords="1035,706,1359,771" @click="clickZoom"/>
+                <area shape="rect" coords="1098,377,1357,686" @click="clickHal"/>
+            </map>
+            <map v-if="$store.state.$tookMan2" name="trapleegmap">
+                <area shape="rect" coords="1098,377,1357,686" @click="clickHal"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="trap-zoomed-template">
+        <div>
+            <img v-if="$store.state.$tookMan2" class="bg" src="./img/trap/trap_zoomed_leeg.jpg" usemap="#trapleegmap"/>
+            <img v-else class="bg" src="./img/trap/trap_zoomed.jpg" usemap="#trapzoomedmap"/>
+
+            <map name="trapzoomedmap">
+                <area shape="rect" coords="785,574,1234,1054" @click="clickMan"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="hal-template">
+        <div>
+            <img class="bg" src="./img/hal/hal_overview.jpg" usemap="#halmap"/>
+
+            <map name="halmap">
+                <area shape="rect" coords="890,714,951,924" @click="">
+                <area shape="circle" coords="1992,963,202" @click="">
+                <area shape="rect" coords="890,714,951,924" @click="">
+                <area shape="rect" coords="890,714,951,924" @click="">
+                <area shape="rect" coords="890,714,951,924" @click="">
+                <area shape="rect" coords="890,714,951,924" @click="">
+
+    <area target="" alt="" title="" href="" coords="1992,963,202" shape="circle">
+    <area target="" alt="" title="" href="" coords="1823,373,2287,587" shape="rect">
+    <area target="" alt="" title="" href="" coords="1102,712,1159,790" shape="rect">
+    <area target="" alt="" title="" href="" coords="1100,820,1165,904" shape="rect">
+    <area target="" alt="" title="" href="" coords="1068,1248,990,721" shape="rect">
+            </map>
+        </div>
+    </script>
+    
+    <script type="text/x-template" id="keuken-overview-template">
+        <div>
+            <img class="bg" src="./img/keuken/keuken_overview.jpg" usemap="#keukenmap"/>
+
+            <map name="keukenmap">
+                <area shape="rect" coords="350,970,600,1140" @click="clickOven"/>
+                <area shape="rect" coords="140,1100,240,1250" @click="clickKeys"/>
+                <area shape="rect" coords="1100,1215,1500,1725" @click="clickHoekkast"/>
+                <area shape="rect" coords="1500,590,1600,645" @click="clickPotjes"/>
+                <area shape="rect" coords="1575,1320,2300,1700" @click="clickVuur"/>
+                <area shape="rect" coords="380,1175,820,1615" @click="clickKast"/>
+                <area shape="rect" coords="1520,785,1750,1200" @click="clickKruiden"/>
+                <area shape="rect" coords="875,650,1040,880" @click="clickPannen"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="oven-template">
+        <div>
+            <img class="bg" src="./img/keuken/oven.jpg"/>
+        </div>
+    </script>
+    
+    <script type="text/x-template" id="keys-template">
+        <div>
+            <img v-if="$store.state.$tookKey" class="bg" src="./img/keuken/sleutels_gepakt.jpg"/>
+            <img v-else class="bg" src="./img/keuken/sleutels_all.jpg" usemap="#keysmap"/>
+
+            <map name="keysmap">
+                <area shape="rect" coords="1270,600,1520,1475" @click="clickKey"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="hoekkast-template">
+        <div>
+            <img class="bg" src="./img/keuken/hoekkast.jpg"/>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="potjes-template">
+        <div>
+            <img class="bg" src="./img/keuken/potjes.jpg" usemap="#potjesmap"/>
+
+            <map name="potjesmap">
+                <!-- <area shape="rect" coords="350,970,600,1140" @click="clickOven"/>
+                <area shape="rect" coords="140,1100,240,1250" @click="clickKeys"/>
+                <area shape="rect" coords="1100,1215,1500,1725" @click="clickHoekkast"/> -->
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="vuur-template">
+        <div>
+            <img class="bg" src="./img/keuken/vuur.jpg"/>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="kast-template">
+        <div>
+            <img class="bg" src="./img/keuken/kast_toe.jpg" usemap="#kastmap"/>
+
+            <map name="kastmap">
+                <area shape="rect" coords="140,480,1080,810" @click="clickKast"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="kast-open-template">
+        <div>
+            <img v-if="$store.state.$tookLamp" class="bg" src="./img/keuken/kast_leeg.jpg"/>
+            <img v-else class="bg" src="./img/keuken/kast_open.jpg" usemap="#kastopenmap"/>
+
+            <map name="kastopenmap">
+                <area shape="rect" coords="950,815,1230,975" @click="clickLamp"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="kruiden-template">
+        <div>
+            <img class="bg" src="./img/keuken/kruiden.jpg"/>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="pannen-template">
+        <div>
+            <img class="bg" src="./img/keuken/pannen.jpg" usemap="#pannenmap"/>
+
+            <map name="pannenmap">
+                <area shape="circle" coords="985,961,296" @click="clickPan"/>
+            </map>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="pannen-weg-template">
+        <div>
+            <img class="bg" src="./img/keuken/pannen_weg.jpg" usemap="#pannenwegmap"/>
+
+            <map name="pannenwegmap">
+                <area shape="rect" coords="915,880,1300,1075" @click="clickBat"/>
+            </map>
+        </div>
+    </script>
+</body>
+
+</html>
