@@ -21,13 +21,18 @@ const routes = [
       ]
   },
   {
-    path: 'hal',
+    path: '/hal',
     component: Container,
     children: [
       {
         path: '',
         component: HalComponents.Hal,
         name: 'Hal'
+      },
+      {
+        path: 'borden',
+        component: HalComponents.Borden,
+        name: 'Borden'
       }
     ]
   },
