@@ -1,6 +1,7 @@
 import { Container } from './components/container.js'
 import * as TrapComponents from './components/trap/trap-modules.js'
 import * as HalComponents from './components/hal/hal-modules.js'
+import * as Slaapkamer1Components from './components/slp1/slp1-modules.js'
 import * as KeukenComponents from './components/keuken/keuken-modules.js'
 
 const routes = [
@@ -55,6 +56,17 @@ const routes = [
         name: 'Schilderij2'
       }
     ]
+  },
+  {
+    path: '/slaapkamer1',
+      component: Container,
+      children: [
+        {
+          path: '',
+          component: Slaapkamer1Components.Slaapkamer1,
+          name: 'Slaapkamer1'
+        }
+      ]
   },
   {
       path: '/keuken',

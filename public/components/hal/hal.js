@@ -18,6 +18,9 @@ const Hal = {
         },
         clickSchilderij2: function() {
             this.$router.push({ name: 'Schilderij2' });
+        },
+        clickSlaapkamer: function() {
+            this.$router.push({ name: 'Slaapkamer1' });
         }
     },
     mounted: function() {
