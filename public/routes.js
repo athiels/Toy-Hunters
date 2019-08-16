@@ -38,6 +38,11 @@ const routes = [
         path: 'barometer',
         component: HalComponents.Barometer,
         name: 'Barometer'
+      },
+      {
+        path: 'potjes',
+        component: HalComponents.Potjes,
+        name: 'Potjes'
       }
     ]
   },

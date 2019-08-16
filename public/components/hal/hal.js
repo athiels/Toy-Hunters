@@ -9,6 +9,9 @@ const Hal = {
         },
         clickBarometer: function() {
             this.$router.push({ name: 'Barometer' });
+        },
+        clickPotjes: function() {
+            this.$router.push({ name: 'Potjes' });
         }
     },
     mounted: function() {
