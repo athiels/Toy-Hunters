@@ -6,6 +6,9 @@ const Hal = {
         },
         clickBorden: function() {
             this.$router.push({ name: 'Borden' });
+        },
+        clickBarometer: function() {
+            this.$router.push({ name: 'Barometer' });
         }
     },
     mounted: function() {

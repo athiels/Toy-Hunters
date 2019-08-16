@@ -33,6 +33,11 @@ const routes = [
         path: 'borden',
         component: HalComponents.Borden,
         name: 'Borden'
+      },
+      {
+        path: 'barometer',
+        component: HalComponents.Barometer,
+        name: 'Barometer'
       }
     ]
   },
