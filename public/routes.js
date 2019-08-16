@@ -43,6 +43,16 @@ const routes = [
         path: 'potjes',
         component: HalComponents.Potjes,
         name: 'Potjes'
+      },
+      {
+        path: 'schilderij1',
+        component: HalComponents.Schilderij1,
+        name: 'Schilderij1'
+      },
+      {
+        path: 'schilderij2',
+        component: HalComponents.Schilderij2,
+        name: 'Schilderij2'
       }
     ]
   },

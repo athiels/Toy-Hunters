@@ -12,6 +12,12 @@ const Hal = {
         },
         clickPotjes: function() {
             this.$router.push({ name: 'Potjes' });
+        },
+        clickSchilderij1: function() {
+            this.$router.push({ name: 'Schilderij1' });
+        },
+        clickSchilderij2: function() {
+            this.$router.push({ name: 'Schilderij2' });
         }
     },
     mounted: function() {
