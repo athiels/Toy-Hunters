@@ -3,6 +3,9 @@ const Slaapkamer1 = {
     methods: {
         clickSchilderijen: function() {
             this.$router.push({ name: 'Schilderijen' });
+        },
+        clickDoosjes: function() {
+            this.$router.push({ name: 'Doosjes' });
         }
     },
     mounted: function() {

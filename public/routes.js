@@ -70,6 +70,11 @@ const routes = [
           path: 'schilderijen',
           component: Slaapkamer1Components.Schilderijen,
           name: 'Schilderijen'
+        },
+        {
+          path: 'Doosjes',
+          component: Slaapkamer1Components.Doosjes,
+          name: 'Doosjes'
         }
       ]
   },

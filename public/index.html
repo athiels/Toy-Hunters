@@ -100,7 +100,7 @@
             <img class="bg" src="./img/slp1/slp1_overview.jpg" usemap="#slp1map"/>
 
             <map name="slp1map">
-                <area shape="rect" coords="113,552,430,678" > <!-- doosjes -->
+                <area shape="rect" coords="113,552,430,678" @click="clickDoosjes">
                 <area shape="rect" coords="520,633,864,987" @click="clickSchilderijen"/>
                 <area shape="rect" coords="1330,618,1692,1667" > <!-- deur boiler -->
                 <area shape="rect" coords="1745,540,2266,1704" > <!-- deur gas -->
@@ -111,6 +111,12 @@
     <script type="text/x-template" id="schilderijen-template">
         <div>
             <img class="bg" src="./img/slp1/slp1_schilderijen.jpg"/>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="doosjes-template">
+        <div>
+            <img class="bg" src="./img/slp1/slp1_doosjes.jpg"/>
         </div>
     </script>
     
