@@ -65,6 +65,11 @@ const routes = [
           path: '',
           component: Slaapkamer1Components.Slaapkamer1,
           name: 'Slaapkamer1'
+        },
+        {
+          path: 'schilderijen',
+          component: Slaapkamer1Components.Schilderijen,
+          name: 'Schilderijen'
         }
       ]
   },
