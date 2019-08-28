@@ -102,7 +102,7 @@
             <map name="slp1map">
                 <area shape="rect" coords="113,552,430,678" @click="clickDoosjes">
                 <area shape="rect" coords="520,633,864,987" @click="clickSchilderijen"/>
-                <area shape="rect" coords="1330,618,1692,1667" > <!-- deur boiler -->
+                <area shape="rect" coords="1330,618,1692,1667" @click="clickBoiler">
                 <area shape="rect" coords="1745,540,2266,1704" > <!-- deur gas -->
             </map>
         </div>
@@ -120,6 +120,12 @@
         </div>
     </script>
     
+    <script type="text/x-template" id="boiler-template">
+        <div>
+            <img class="bg" src="./img/slp1/slp1_boiler.jpg"/>
+        </div>
+    </script>
+
     <script type="text/x-template" id="keuken-overview-template">
         <div>
             <img class="bg" src="./img/keuken/keuken_overview.jpg" usemap="#keukenmap"/>

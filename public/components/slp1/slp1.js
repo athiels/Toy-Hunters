@@ -6,6 +6,9 @@ const Slaapkamer1 = {
         },
         clickDoosjes: function() {
             this.$router.push({ name: 'Doosjes' });
+        },
+        clickBoiler: function() {
+            this.$router.push({ name: 'Boiler' })
         }
     },
     mounted: function() {

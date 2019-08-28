@@ -75,6 +75,11 @@ const routes = [
           path: 'Doosjes',
           component: Slaapkamer1Components.Doosjes,
           name: 'Doosjes'
+        },
+        {
+          path: 'Boiler',
+          component: Slaapkamer1Components.Boiler,
+          name: 'Boiler'
         }
       ]
   },
